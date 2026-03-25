@@ -22,6 +22,18 @@ export function AgeGate() {
     }
   }, [visible]);
 
+  // Lock body scroll when gate is visible
+  useEffect(() => {
+    if (visible) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [visible]);
+
   function handleKeyDown(e: React.KeyboardEvent) {
     if (e.key !== "Tab") return;
     const focusable = [confirmRef.current, denyRef.current].filter(
