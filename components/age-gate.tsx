@@ -89,6 +89,7 @@ export function AgeGate() {
                 height={46}
                 unoptimized
                 className="mx-auto"
+                style={{ width: 160, height: 46, objectFit: "contain" }}
                 priority
               />
             </div>

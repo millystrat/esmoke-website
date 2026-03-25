@@ -23,6 +23,7 @@ export function Footer() {
             width={160}
             height={46}
             unoptimized
+            style={{ width: 160, height: 46, objectFit: "contain" }}
             className="brightness-0 invert mb-4"
           />
           <p className="text-sm leading-relaxed" style={{ color: "rgba(255,255,255,0.4)" }}>

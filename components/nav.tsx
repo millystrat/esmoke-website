@@ -30,6 +30,7 @@ export function Nav() {
             height={46}
             priority
             unoptimized
+            style={{ width: 160, height: 46, objectFit: "contain" }}
           />
         </a>
 
