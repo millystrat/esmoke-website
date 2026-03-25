@@ -77,6 +77,7 @@ export function Reviews() {
               }}
             >
               <div
+                role="img"
                 className="text-sm font-bold mb-3"
                 aria-label={`${r.stars} out of 5 stars`}
                 style={{ color: "var(--esmoke-red)" }}

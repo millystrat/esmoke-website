@@ -1,11 +1,12 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { Menu, X } from "lucide-react";
 
 export function Nav() {
   const [open, setOpen] = useState(false);
+  const buttonRef = useRef<HTMLButtonElement>(null);
 
   const links = [
     { label: "Products", href: "#products" },
@@ -54,6 +55,7 @@ export function Nav() {
 
         {/* Mobile hamburger */}
         <button
+          ref={buttonRef}
           className="md:hidden transition-opacity hover:opacity-70"
           onClick={() => setOpen(!open)}
           aria-label="Toggle menu"
@@ -66,33 +68,33 @@ export function Nav() {
       </div>
 
       {/* Mobile menu */}
-      {open && (
-        <div
-          id="mobile-menu"
-          className="md:hidden border-t px-6 py-4 flex flex-col gap-4"
-          style={{ background: "var(--esmoke-bg)", borderColor: "var(--esmoke-border)" }}
-        >
-          {links.map((l) => (
-            <a
-              key={l.href}
-              href={l.href}
-              onClick={() => setOpen(false)}
-              className="text-sm tracking-widest uppercase transition-opacity hover:opacity-60"
-              style={{ color: "var(--esmoke-text)" }}
-            >
-              {l.label}
-            </a>
-          ))}
+      <div
+        id="mobile-menu"
+        hidden={!open}
+        aria-hidden={!open}
+        className="md:hidden border-t px-6 py-4 flex flex-col gap-4"
+        style={{ background: "var(--esmoke-bg)", borderColor: "var(--esmoke-border)" }}
+      >
+        {links.map((l) => (
           <a
-            href="tel:4848695837"
-            onClick={() => setOpen(false)}
-            className="text-sm font-semibold"
-            style={{ color: "var(--esmoke-red)" }}
+            key={l.href}
+            href={l.href}
+            onClick={() => { setOpen(false); buttonRef.current?.focus(); }}
+            className="text-sm tracking-widest uppercase transition-opacity hover:opacity-60"
+            style={{ color: "var(--esmoke-text)" }}
           >
-            (484) 869-5837
+            {l.label}
           </a>
-        </div>
-      )}
+        ))}
+        <a
+          href="tel:4848695837"
+          onClick={() => { setOpen(false); buttonRef.current?.focus(); }}
+          className="text-sm font-semibold"
+          style={{ color: "var(--esmoke-red)" }}
+        >
+          (484) 869-5837
+        </a>
+      </div>
     </nav>
   );
 }

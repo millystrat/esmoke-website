@@ -102,7 +102,7 @@ export function Footer() {
           <p>
             You must be 21 or older to purchase tobacco products. Please consume responsibly.
           </p>
-          <p className="whitespace-nowrap">
+          <p suppressHydrationWarning className="whitespace-nowrap">
             © {new Date().getFullYear()} E Smoke &amp; Vapor. All rights reserved.
           </p>
         </div>
