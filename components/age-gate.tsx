@@ -87,6 +87,7 @@ export function AgeGate() {
                 alt="E Smoke & Vapor"
                 width={160}
                 height={46}
+                unoptimized
                 className="mx-auto"
                 priority
               />

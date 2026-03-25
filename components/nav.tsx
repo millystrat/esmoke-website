@@ -29,6 +29,7 @@ export function Nav() {
             width={160}
             height={46}
             priority
+            unoptimized
           />
         </a>
 
