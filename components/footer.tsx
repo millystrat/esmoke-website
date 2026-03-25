@@ -4,6 +4,7 @@ const navLinks = [
   { label: "Products", href: "#products" },
   { label: "Reviews", href: "#reviews" },
   { label: "Hours", href: "#hours" },
+  { label: "Contact", href: "#contact" },
 ];
 
 export function Footer() {
@@ -14,20 +15,42 @@ export function Footer() {
       style={{ background: "var(--esmoke-dark)" }}
     >
       <div className="max-w-6xl mx-auto">
-        {/* Three-column grid */}
+        {/* Logo + tagline — above the grid */}
+        <div className="mb-8">
+          <Image
+            src="/logo.png"
+            alt="E Smoke & Vapor"
+            width={160}
+            height={46}
+            className="brightness-0 invert mb-4"
+          />
+          <p className="text-sm leading-relaxed" style={{ color: "rgba(255,255,255,0.4)" }}>
+            Your neighborhood smoke &amp; vape shop since 2019
+          </p>
+        </div>
+
+        {/* Three-column grid: Address | Hours | Links */}
         <div className="grid md:grid-cols-3 gap-10 mb-12">
-          {/* Brand */}
+          {/* Address */}
           <div>
-            <Image
-              src="/logo.png"
-              alt="E Smoke & Vapor"
-              width={160}
-              height={46}
-              className="brightness-0 invert mb-4"
-            />
-            <p className="text-sm leading-relaxed" style={{ color: "rgba(255,255,255,0.4)" }}>
-              Your neighborhood smoke &amp; vape shop since 2019
+            <p
+              className="text-xs tracking-[0.25em] uppercase font-semibold mb-4"
+              style={{ color: "rgba(255,255,255,0.3)" }}
+            >
+              Find Us
             </p>
+            <p className="text-sm mb-3" style={{ color: "rgba(255,255,255,0.5)" }}>
+              1915 N 5th Street Hwy
+              <br />
+              Reading, PA 19605
+            </p>
+            <a
+              href="tel:4848695837"
+              className="text-sm block transition-opacity hover:opacity-70"
+              style={{ color: "rgba(255,255,255,0.5)" }}
+            >
+              (484) 869-5837
+            </a>
           </div>
 
           {/* Hours */}
@@ -45,27 +68,15 @@ export function Footer() {
             </div>
           </div>
 
-          {/* Address + links */}
+          {/* Links */}
           <div>
             <p
               className="text-xs tracking-[0.25em] uppercase font-semibold mb-4"
               style={{ color: "rgba(255,255,255,0.3)" }}
             >
-              Find Us
+              Links
             </p>
-            <p className="text-sm mb-3" style={{ color: "rgba(255,255,255,0.5)" }}>
-              1915 N 5th Street Hwy
-              <br />
-              Reading, PA 19605
-            </p>
-            <a
-              href="tel:4848695837"
-              className="text-sm block mb-4 transition-opacity hover:opacity-70"
-              style={{ color: "rgba(255,255,255,0.5)" }}
-            >
-              (484) 869-5837
-            </a>
-            <div className="flex flex-wrap gap-x-4 gap-y-2">
+            <div className="flex flex-col gap-2">
               {navLinks.map((l) => (
                 <a
                   key={l.href}

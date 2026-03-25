@@ -21,32 +21,6 @@ export function Location() {
       style={{ background: "var(--esmoke-bg)" }}
     >
       <div className="max-w-6xl mx-auto">
-        {/* Section header */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="text-center mb-14"
-        >
-          <p
-            className="text-xs tracking-[0.3em] uppercase font-semibold mb-3"
-            style={{ color: "var(--esmoke-red)" }}
-          >
-            Come see us
-          </p>
-          <h2
-            className="font-bold"
-            style={{
-              fontFamily: "var(--font-oswald)",
-              fontSize: "clamp(2rem, 5vw, 3rem)",
-              color: "var(--esmoke-text)",
-            }}
-          >
-            Hours &amp; Location
-          </h2>
-        </motion.div>
-
         <div className="grid md:grid-cols-2 gap-12 items-start">
           {/* Info column */}
           <motion.div
