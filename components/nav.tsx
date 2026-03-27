@@ -20,17 +20,17 @@ export function Nav() {
       className="fixed top-0 left-0 right-0 z-50 border-b"
       style={{ background: "var(--esmoke-bg)", borderColor: "var(--esmoke-border)" }}
     >
-      <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+      <div className="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
         {/* Logo */}
         <a href="#" className="flex items-center">
           <Image
             src="/logo.png"
             alt="E Smoke & Vapor"
-            width={160}
-            height={46}
+            width={220}
+            height={64}
             priority
             unoptimized
-            style={{ width: 160, height: 46, objectFit: "contain" }}
+            style={{ width: 220, height: 64, objectFit: "contain" }}
           />
         </a>
 

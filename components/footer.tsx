@@ -20,11 +20,11 @@ export function Footer() {
           <Image
             src="/logo.png"
             alt="E Smoke & Vapor"
-            width={160}
-            height={46}
+            width={200}
+            height={58}
             unoptimized
-            style={{ width: 160, height: 46, objectFit: "contain" }}
-            className="brightness-0 invert mb-4"
+            style={{ width: 200, height: 58, objectFit: "contain" }}
+            className="mb-4"
           />
           <p className="text-sm leading-relaxed" style={{ color: "rgba(255,255,255,0.4)" }}>
             Your neighborhood smoke &amp; vape shop since 2019
